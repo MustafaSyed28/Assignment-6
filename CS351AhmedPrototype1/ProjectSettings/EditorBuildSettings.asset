@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Platformer Player Anim Finished.unity
     guid: 1986643240600164396d151820a83a5c
+  - enabled: 1
+    path: Assets/Scenes/ShootingPlatformerStart.unity
+    guid: 4c43c8e6ee3e8b94db30efc0a81d8db1
   m_configObjects: {}
