@@ -17,12 +17,15 @@ public class EnemyMoveWalkingChase : MonoBehaviour
 
     private Animator anim;
 
+    private SpriteRenderer sr;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         playerTransform = GameObject.FindWithTag("Player").transform;
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -48,6 +51,12 @@ public class EnemyMoveWalkingChase : MonoBehaviour
             {
                 StopMoving();
             }
+
+        }
+        else
+        {
+            //stop moving if there is no ground ahead
+            StopMoving();
         }
 
     }
@@ -70,11 +79,11 @@ public class EnemyMoveWalkingChase : MonoBehaviour
     {
         if (playerDirection.x < 0)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            sr.flipX = false;
         }
-        else
+        else if (playerDirection.x > 0)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            sr.flipX = true;
         }
     }
 
